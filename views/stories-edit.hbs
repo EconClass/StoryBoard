@@ -1,0 +1,26 @@
+<form method="POST" action="/stories/{{stories._id}}?_method=PUT">
+  <fieldset>
+    <legend>Edit Story</legend>
+    <!-- TITLE -->
+    <p>
+      <label for="stories-title">Title</label><br>
+      <input class="form-control" id="stories-title" type="text" name="title" value="{{stories.title}}"/>
+    </p>
+
+    <!-- Author -->
+    <p>
+      <label for="stories-author">Author</label><br>
+      <input class="form-control" id="stories-author" type="text" name="storiesAuthor" value="{{stories.author}}" />
+    </p>
+
+    <!-- Body -->
+    <p>
+      <label for="stories-body">Story</label><br>
+      <textarea class="form-control" id="stories-body" name="body" rows="100" />{{stories.body}}</textarea>
+    </p>
+  </fieldset>
+  <!-- BUTTON -->
+  <p>
+    <button type="submit">Save Story</button>
+  </p>
+</form>

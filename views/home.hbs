@@ -1,0 +1,6 @@
+<h1>Stories</h1>
+<a href="/stories/new">New Story</a>
+{{#each stories}}
+  <h2><a href="/stories/{{this._id}}">{{this.title}}</a></h2>
+  <h3>{{this.author}}</h3>
+{{/each}}
