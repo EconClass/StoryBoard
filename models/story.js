@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Story = mongoose.model('Story', {
   title: String,
-  description: String,
-  author: String
+  author: String,
+  storyText: String
 });
 
 module.exports = Story;

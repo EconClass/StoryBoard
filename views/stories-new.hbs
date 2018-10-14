@@ -1,20 +1,27 @@
 <form method="POST" action="/stories">
-  <fieldset>
-    <legend>New Story</legend>
-    <!-- TITLE -->
-    <p>
-      <label for="title">Title</label><br>
-      <input type="text" name="title" />
-    </p>
-    <p>
-      <label for="author">Author</label><br>
-      <input type="text" name="author" />
-    </p>
-  </fieldset>
+<fieldset>
+<legend>Story</legend>
+<!-- TITLE -->
+<p>
+<label for="stories-title">Title</label><br>
+<input class="form-control" id="stories-title" type="text" name="title" value="{{stories.title}}"/>
+</p>
 
-  <!-- BUTTON -->
-  <p>
-    <button type="submit">Save Story</button>
-  </p>
+<!-- AUTHOR -->
+<p>
+<label for="stories-author">Author</label><br>
+<input class="form-control" id="stories-author" type="text" name="storiesAuthor" value="{{stories.author}}" />
+</p>
 
+<!-- TEXT -->
+<p>
+<label for="stories-text">Story</label><br>
+<textarea class="form-control" id="stories-text" name="storyText" rows="100" />{{stories.storyText}}</textarea>
+</p>
+
+<!-- BUTTON -->
+<p>
+<button type="submit">Save Story</button>
+</p>
+</fieldset>
 </form>

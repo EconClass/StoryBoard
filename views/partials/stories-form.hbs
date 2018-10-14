@@ -1,4 +1,3 @@
-<form method="POST" action="/stories/{{stories._id}}?_method=PUT">
 <fieldset>
 <legend>Story</legend>
 <!-- TITLE -->
@@ -15,7 +14,7 @@
 
 <!-- TEXT -->
 <p>
-<label for="stories-text">Story Text</label><br>
+<label for="stories-text">Story</label><br>
 <textarea class="form-control" id="stories-text" name="storyText" rows="100" />{{stories.storyText}}</textarea>
 </p>
 
@@ -24,4 +23,3 @@
 <button type="submit">Save Story</button>
 </p>
 </fieldset>
-</form>
