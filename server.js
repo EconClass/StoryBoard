@@ -20,7 +20,7 @@ app.engine('hbs', exphbs.engine);
 app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-mongoose.connect('mongodb://localhost/StoryBoard', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/StoryBoard', { useNewUrlParser: true });
 
 //========================================USE ROUTES========================================\\
 app.use(storyControllers);
