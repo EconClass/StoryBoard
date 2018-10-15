@@ -1,25 +1,25 @@
 <fieldset>
 <legend>Story</legend>
 <!-- TITLE -->
-<p>
+<div class="form-group">
 <label for="stories-title">Title</label><br>
 <input class="form-control" id="stories-title" type="text" name="title" value="{{stories.title}}"/>
-</p>
+</div>
 
 <!-- AUTHOR -->
-<p>
+<div class="form-group">
 <label for="stories-author">Author</label><br>
-<input class="form-control" id="stories-author" type="text" name="storiesAuthor" value="{{stories.author}}" />
-</p>
+<input class="form-control" id="stories-author" type="text" name="author" value="{{stories.author}}" />
+</div>
 
 <!-- TEXT -->
-<p>
-<label for="stories-text">Story</label><br>
-<textarea class="form-control" id="stories-text" name="storyText" rows="100" />{{stories.storyText}}</textarea>
-</p>
+<div class="form-group">
+<label for="stories-content">Story</label><br>
+<textarea class="form-control" id="stories-content" name="content" rows="50" />{{stories.content}}</textarea>
+</div>
 
 <!-- BUTTON -->
-<p>
+<div class="form-group">
 <button type="submit">Save Story</button>
-</p>
+</div>
 </fieldset>

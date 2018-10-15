@@ -1,6 +1,14 @@
-<h1>Stories</h1>
-<a href="/stories/new">New Story</a>
+<h1 align="center">Featured Stories</h1>
+<div class="row">
 {{#each stories}}
-  <h2><a href="/stories/{{this._id}}">{{this.title}}</a></h2>
-  <h3>{{this.author}}</h3>
+<div class="col-sm-3">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">{{this.title}}</h3>
+      <p class="card-text">{{this.author}}</p>
+      <a href="/stories/{{this._id}}" class="btn btn-primary">Read</a>
+    </div>
+  </div>
+</div>
 {{/each}}
+</div>

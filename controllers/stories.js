@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const Story = require('../models/story.js');
+const Comment = require('../models/comment.js');
 
 // INDEX
 app.get('/', (req, res) => {
@@ -27,10 +28,12 @@ app.post('/stories', (req, res) => {
 
 // SHOW
 app.get('/stories/:id', (req, res) => {
-  Story.findById(req.params.id).then((stories) => {
-      res.render('stories-show.hbs', { stories: stories })
+  Story.findById(req.params.id).then(stories => {
+    Comment.find({ storiesId: req.params.id }).then(comments => {
+      res.render('stories-show.hbs', { stories: stories, comments: comments });
+    });
   }).catch((err) => {
-      console.log(err.message);
+    console.log(err.message);
   });
 });
 
@@ -54,7 +57,7 @@ app.put('/stories/:id', (req, res) => {
 });
 
 // DELETE
-app.delete('stories/:id', (req, res) => {
+app.delete('/stories/:id', (req, res) => {
   Story.findByIdAndDelete(req.params.id).then(stories => {
       res.redirect('/');
   }).catch((err) => {

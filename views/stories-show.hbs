@@ -1,9 +1,19 @@
 <a href="/">Back to Home</a>
-<h1>{{stories.title}}</h1>
-<h2>{{stories.author}}</h2>
-<p>{{stories.storyText}}</p>
-<p><a href="/stories/{{stories._id}}/edit">Edit</a></p>
-<!-- Delete button -->
-<p><form method="POST" action="/stories/{{stories._id}}?_method=DELETE">
-    <button type="submit">Delete</button>
-</form></p>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>{{stories.title}}</h1>
+        <h2>{{stories.author}}</h2>
+        <p>{{stories.content}}</p>
+        <p><a href="/stories/{{stories._id}}/edit">Edit</a></p>
+        <!-- Delete button -->
+        <p><form method="POST" action="/stories/{{stories._id}}?_method=DELETE">
+        <button type="submit">Delete</button>
+        </form></p>
+        <hr>
+        {{> comment-form}}
+        <hr>
+        {{#each comments}}
+            {{> comment}}
+        {{/each}}
+    </div>
+</div>
